@@ -70,9 +70,10 @@ div#app {
     border-top-left-radius: 35px!important;
     border-top-right-radius: 35px!important;
 }
-.v-card.pokemon__card {
-    // background-color: hsla(0,0%,100%,.37)!important;
-    background-color: $light-ghost !important;
+.v-card__text.pokemon__container {
+    background: url('../images/bg-transparent-pokeball-vector-white.png') no-repeat;
+    background-position: 50% 0%;
+    background-size: contain;
 }
 .v-card__text.pokemon__container {
     padding: 0 !important;
@@ -98,7 +99,7 @@ div#app {
     position: absolute;
     width: 100%;
     height: 6em;
-    background-image: linear-gradient( rgba(255, 255, 255, 0) 0%, rgb(162, 146, 188) 100% );
+    // background-image: linear-gradient( rgba(255, 255, 255, 0) 0%, rgb(162, 146, 188) 100% );
     margin: auto;
     top: -20px;
 }
@@ -169,4 +170,62 @@ div#app {
 }
 .bg-unknown {
     background: $unknown !important;
+}
+/** Type of Pokemon Color */
+.bg-light-bug {
+    background: $light-bug !important;
+}
+.bg-light-dark {
+    background: $light-dark !important;
+}
+.bg-light-dragon {
+    background: $light-dragon !important;
+}
+.bg-light-electric {
+    background: $light-electric !important;
+}
+.bg-light-fairy {
+    background: $light-fairy !important;
+}
+.bg-light-fighting {
+    background: $light-fighting !important;
+}
+.bg-light-fire {
+    background: $light-fire !important;
+}
+.bg-light-flying {
+    background: $light-flying !important;
+}
+.bg-light-ghost {
+    background: $light-flying !important;
+}
+.bg-light-grass {
+    background: $light-grass !important;
+}
+.bg-light-ground {
+    background: $light-ground !important;
+}
+.bg-light-ice {
+    background: $light-ice !important;
+}
+.bg-light-normal {
+    background: $light-normal !important;
+}
+.bg-light-poison {
+    background: $light-poison !important;
+}
+.bg-light-psychic {
+    background: $light-psychic !important;
+}
+.bg-light-rock {
+    background: $light-rock !important;
+}
+.bg-light-steel {
+    background: $light-steel !important;
+}
+.bg-light-water {
+    background: $light-water !important;
+}
+.bg--lightunknown {
+    background: $light-unknown !important;
 }

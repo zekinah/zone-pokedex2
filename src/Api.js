@@ -46,10 +46,21 @@ export default {
     return pokemons;
   },
   async getByPokemon(id) {
-    const { data } = await http.get(
+    const  res = await http.get(
       "https://pokeapi.co/api/v2/pokemon/" + id
     );
-    return data;
+    const types = res.data.types.map(item => {
+        const typename = item.type.name;
+        const typeclass = "bg-" + item.type.name;
+        const colorclass = "bg-light-" + item.type.name;
+        return {
+        typename,
+        typeclass,
+        colorclass
+        };
+    });
+    const results = {...res.data, types};
+    return results;
   },
   async getAllSpecies() {
     const { data } = await http.get(

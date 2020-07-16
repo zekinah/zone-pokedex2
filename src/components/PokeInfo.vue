@@ -6,7 +6,7 @@
     hide-overlay
     transition="dialog-bottom-transition"
   >
-    <v-card class="pokemon__card">
+    <v-card class="pokemon__card" :class="info.types[0].colorclass">
       <v-card-title>
         <v-spacer></v-spacer>
         <v-btn icon @click="dialog = false" class="mdl__close">
@@ -68,7 +68,7 @@
                     <div class="body-1 mt-3">Abilities</div>
                     <v-chip
                         class="ma-2 chip-ability"
-                        color="red"
+                        :class="info.types[0].colorclass"
                         dark
                         v-for="a in info.abilities"
                         :key="a.ability.name">
@@ -91,10 +91,10 @@ export default {
   name: "PokeInfo",
   data: () => ({
     dialog: false,
-    info: [],
+    info: {types: {0: {colorclass: "temp"}}},
     pokeImage: "",
     pokeDescription: "",
-    pokeTypes: []
+    pokeTypes: [],
   }),
   methods: {
         viewPokemon(data) {
@@ -107,22 +107,11 @@ export default {
             };
             this.dialog = true;
             this.getSpecies(data.id);
-            this.setTypesColor(this.info.types);
+            this.pokeTypes = this.info.types;
             },
             async getSpecies(id) {
             this.pokeDescription = await api.getBySpecies(id);
-        },
-        setTypesColor(types) {
-        const type = types.map(item => {
-            const typename = item.type.name;
-            const typeclass = "bg-" + item.type.name;
-            return {
-            typename,
-            typeclass
-            };
-        });
-        this.pokeTypes = type;
-        },
+        }
     },
     components: {
         PokeInfoTab
