@@ -36,9 +36,10 @@
         md="4"
         lg="4"
       >
-        <PokeCard :data="poke" />
+        <PokeCard :data="poke" @VIEW_POKEMON="viewPokemon"/>
       </v-col>
     </v-row>
+     <PokeInfo ref="pokemonInfo" />
   </div>
 </template>
 
@@ -46,6 +47,7 @@
 import api from "@/Api";
 import Topwrapper from "@/components/Topwrapper.vue";
 import PokeCard from "@/components/PokeCard.vue";
+import PokeInfo from "@/components/PokeInfo.vue";
 
 export default {
   name: "Home",
@@ -53,12 +55,9 @@ export default {
     title: "Pokédex",
     subtitle: "Search for Pokémon by name or using National Pokédex number",
     search: "",
-    imageUrl:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/",
     pokemons: [],
     initialLoading: true,
     loadMoreloading: false,
-    nextBatch: null
   }),
   created() {
     this.getPokemonList();
@@ -66,27 +65,16 @@ export default {
   methods: {
     /** Get all Generation */
     async getPokemonList() {
-      let limit = 200;
+      let limit = 20;
       this.initialLoading = true;
-      const res = await api.getAllPokemonByLimit(limit);
-      this.pokemons = res.results.map(subdata => {
-        const id = subdata.url.split("/")[subdata.url.split("/").length - 2];
-        return {
-          id,
-          ...subdata,
-          imageUrl: `${this.imageUrl}${id}.png`
-        };
-      });
-      if (res.next) {
-        this.nextBatch = res.next;
-      }
+      this.pokemons = await api.getAllPokemonByLimit(limit);
       this.initialLoading = false;
     },
     /** View Specific Pokemon */
-    // async viewPokemon(id) {
-      // const data  = await api.getByPokemon(id);
-      // this.$refs.pokemonInfo.viewPokemon(data);
-    // },
+    async viewPokemon(id) {
+      const data  = await api.getByPokemon(id);
+      this.$refs.pokemonInfo.viewPokemon(data);
+    },
   },
   computed: {
     filteredPokemons() {
@@ -97,7 +85,8 @@ export default {
   },
   components: {
     Topwrapper,
-    PokeCard
+    PokeCard,
+    PokeInfo
   }
 };
 </script>

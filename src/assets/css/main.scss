@@ -21,6 +21,26 @@ $steel: #b8b8d0;
 $water: #6890f0;
 $unknown: #68a090;
 
+$light-bug: #a8b820;
+$light-dark: #705848;
+$light-dragon: #7038f8;
+$light-electric: #f8d030;
+$light-fairy: #ee99ac;
+$light-fighting: #c03028;
+$light-fire: #f08030;
+$light-flying: #a890f0;
+$light-ghost: #705898;
+$light-grass: #78c850;
+$light-ground: #e0c068;
+$light-ice: #98d8d8;
+$light-normal: #a8a878;
+$light-poison: #a040a0;
+$light-psychic: #f85888;
+$light-rock: #b8a038;
+$light-steel: #b8b8d0;
+$light-water: #6890f0;
+$light-unknown: #68a090;
+
 div#app {
     background: url('../images/bg-tranparent.png') no-repeat;
     background-position: 50% 0%;
@@ -45,4 +65,63 @@ div#app {
     width: 100%;
     right: 20px;
     text-align: right;
+}
+
+/** Type of Pokemon Color */
+.bg-bug {
+    background: $bug !important;
+}
+.bg-dark {
+    background: $dark !important;
+}
+.bg-dragon {
+    background: $dragon !important;
+}
+.bg-electric {
+    background: $electric !important;
+}
+.bg-fairy {
+    background: $fairy !important;
+}
+.bg-fighting {
+    background: $fighting !important;
+}
+.bg-fire {
+    background: $fire !important;
+}
+.bg-flying {
+    background: $flying !important;
+}
+.bg-ghost {
+    background: $flying !important;
+}
+.bg-grass {
+    background: $grass !important;
+}
+.bg-ground {
+    background: $ground !important;
+}
+.bg-ice {
+    background: $ice !important;
+}
+.bg-normal {
+    background: $normal !important;
+}
+.bg-poison {
+    background: $poison !important;
+}
+.bg-psychic {
+    background: $psychic !important;
+}
+.bg-rock {
+    background: $rock !important;
+}
+.bg-steel {
+    background: $steel !important;
+}
+.bg-water {
+    background: $water !important;
+}
+.bg-unknown {
+    background: $unknown !important;
 }

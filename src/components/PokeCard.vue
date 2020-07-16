@@ -1,5 +1,5 @@
 <template>
-  <v-card hover class="poke__card rounded-lg">
+  <v-card hover class="poke__card rounded-lg" @click="$emit('VIEW_POKEMON', data.id)">
     <v-card-text class="d-flex flex-column">
       <span class="poke__card-id text-capitalize">#{{ data.id }}</span>
       <v-img
