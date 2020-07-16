@@ -21,25 +21,25 @@ $steel: #b8b8d0;
 $water: #6890f0;
 $unknown: #68a090;
 
-$light-bug: #a8b820;
-$light-dark: #705848;
-$light-dragon: #7038f8;
-$light-electric: #f8d030;
-$light-fairy: #ee99ac;
-$light-fighting: #c03028;
-$light-fire: #f08030;
-$light-flying: #a890f0;
-$light-ghost: #705898;
-$light-grass: #78c850;
-$light-ground: #e0c068;
-$light-ice: #98d8d8;
-$light-normal: #a8a878;
-$light-poison: #a040a0;
-$light-psychic: #f85888;
-$light-rock: #b8a038;
-$light-steel: #b8b8d0;
-$light-water: #6890f0;
-$light-unknown: #68a090;
+$light-bug: #C6D16E;
+$light-dark: #A29288;
+$light-dragon: #A27DFA;
+$light-electric: #FAE078;
+$light-fairy: #F4BDC9;
+$light-fighting: #D67873;
+$light-fire: #F5AC78;
+$light-flying: #C6B7F5;
+$light-ghost: #A292BC;
+$light-grass: #A7DB8D;
+$light-ground: #EBD69D;
+$light-ice: #BCE6E6;
+$light-normal: #C6C6A7;
+$light-poison: #C183C1;
+$light-psychic: #FA92B2;
+$light-rock: #D1C17D;
+$light-steel: #D1D1E0;
+$light-water: #9DB7F5;
+$light-unknown: #9DC1B7;
 
 div#app {
     background: url('../images/bg-tranparent.png') no-repeat;
@@ -65,6 +65,51 @@ div#app {
     width: 100%;
     right: 20px;
     text-align: right;
+}
+.v-dialog {
+    border-top-left-radius: 35px!important;
+    border-top-right-radius: 35px!important;
+}
+.v-card.pokemon__card {
+    // background-color: hsla(0,0%,100%,.37)!important;
+    background-color: $light-ghost !important;
+}
+.v-card__text.pokemon__container {
+    padding: 0 !important;
+    position: relative;
+}
+.bg-pokemon__name {
+    color: #f7f7f7;
+    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #f7f7f7;
+    font-size: 100px;
+    font-weight:700;
+    opacity: 0.2;
+    text-transform: uppercase;
+    position: absolute;
+    text-align: center;
+    display: block;
+    margin: auto;
+    left: -49px;
+    top: -10px;
+}
+.bg-pokemon__namefadeout {
+    position: absolute;
+    width: 100%;
+    height: 6em;
+    background-image: linear-gradient( rgba(255, 255, 255, 0) 0%, rgb(162, 146, 188) 100% );
+    margin: auto;
+    top: -20px;
+}
+.pokemon__title, .mdl__close {
+    z-index: 1;
+}
+.pokemon__information {
+    background: #fff;
+    padding: 15px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
 }
 
 /** Type of Pokemon Color */
