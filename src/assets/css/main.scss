@@ -113,6 +113,26 @@ div#app {
     border-top-right-radius: 35px;
 }
 
+.gen__dialog {
+    height: 85%;
+    bottom: 0;
+    top: unset !important;
+    box-shadow: 0px 0px 100px 100px rgba(0,0,0,0.5);
+}
+.gen__dialog:before {
+    content: "";
+    width: 30%;
+    display: block;
+    height: 10px;
+    background: #da5b60;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0px;
+    z-index: 1;
+    margin: auto;
+}
+
 /** Type of Pokemon Color */
 .bg-bug {
     background: $bug !important;

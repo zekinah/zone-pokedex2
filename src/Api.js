@@ -13,10 +13,17 @@ var imageUrlofficial = "https://raw.githubusercontent.com/PokeAPI/sprites/master
 
 export default {
   async getAllGeneration() {
-    const { data } = await http.get(
+    const res = await http.get(
       "https://pokeapi.co/api/v2/generation"
     );
-    return data;
+    const generation  = res.data.results.map(subdata => {
+      const id = subdata.url.split("/")[subdata.url.split("/").length - 2];
+      return {
+        id,
+        ...subdata,
+      };
+    });
+    return generation;
   },
   async getAllByGeneration(id) {
     const { data } = await http.get(
