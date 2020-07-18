@@ -15,21 +15,23 @@
         </v-btn>
       </v-card-title>
       <v-card-text class="generation__container">
-        <div class="justify-center align-center">
-            <div class="headline text-h5 text-capitalize font-weight-black">Generations</div>
-            <div class="subtitle-1">Use search for generations to explore your Pokémon!</div>
-            <v-row>
-                <v-col
-                    v-for="gen in pokeGen"
-                    :key="gen.name"
-                    cols="6"
-                    md="4"
-                    lg="4"
-                >
-                    <GenCard :data="gen"/>
-                </v-col>
-            </v-row>
-        </div>
+        <v-container>
+            <div class="justify-center align-center">
+                <div class="headline text-h5 text-capitalize font-weight-black">Generations</div>
+                <div class="subtitle-1">Use search for generations to explore your Pokémon!</div>
+                <v-row>
+                    <v-col
+                        v-for="gen in pokeGen"
+                        :key="gen.name"
+                        cols="6"
+                        md="6"
+                        lg="6"
+                    >
+                        <GenCard :data="gen"/>
+                    </v-col>
+                </v-row>
+            </div>
+        </v-container>
       </v-card-text>
     </v-card>
   </v-dialog>
