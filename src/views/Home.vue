@@ -83,6 +83,7 @@ export default {
     async getGenerations() {
       const data  = await api.getAllGeneration();
       this.$refs.generationInfo.listGenerations(data);
+      console.log(data);
     },
     /** View Generation and View it */
     async viewGeneration(gendata) {
@@ -93,6 +94,7 @@ export default {
       this.pokemons = data;
       this.initialLoading = false;
     },
+    /** View About me */
     viewAbout() {
       this.$refs.pokedexAbout.about();
     }

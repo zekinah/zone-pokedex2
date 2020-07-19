@@ -32,10 +32,12 @@
                     Special Thanks to <a :href="pokemon" target="_blank">Pokémon</a>, the
                     original website.
                     </p>
+                    <p class="mb-0 text-subtitle-2">Find this project useful?</p>
+                    <p>Support it by joining <a :href="stargazers" target="_blank">stargazers</a> for this repository and <a :href="github" target="_blank">follow me</a> for my next creations!</p>
                 </div>
-                <v-col class="text-center" cols="12">
-                    <p class="text-caption"><strong> Made with ❤️ by <a :href="gitHub" target="_blank">Zekinah Lecaros</a>.</strong></p>
-                </v-col>
+                <div class="about__footer">
+                    <p class="text-caption text-center"><strong> Made with ❤️ by <a :href="website" target="_blank">Zekinah Lecaros</a>.</strong></p>
+                </div>
             </div>
         </v-container>
       </v-card-text>
@@ -48,11 +50,13 @@ export default {
   name: "PokédexAbout",
   data: () => ({
       dialog: false,
-      vuejs: "//vuejs.org/",
-      vuetify: "//vuetifyjs.com",
-      pokeapi: "//pokeapi.co/",
-      pokemon: "//www.pokemon.com/us/",
-      gitHub: "//github.com/zekinah/"
+      vuejs: "https://vuejs.org/",
+      vuetify: "https://vuetifyjs.com",
+      pokeapi: "https://pokeapi.co/",
+      pokemon: "https://www.pokemon.com/us/",
+      github: "https://github.com/zekinah/",
+      stargazers: "https://github.com/zekinah/pandemiccovid-19/stargazers",
+      website: "https://zekinahlecaros.com/",
   }),
   methods: {
     about() {

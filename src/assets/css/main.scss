@@ -135,6 +135,14 @@ div#app {
     z-index: 1;
     margin: auto;
 }
+.generation__card:hover {
+    background: #da5b60;
+    transition: background-color .2s ease, color .2s ease;
+}
+.generation__card:hover .generation__title {
+    color: #ffffff;
+    transition: background-color .2s ease, color .2s ease;
+}
 
 /** Type of Pokemon Color */
 .bg-bug {

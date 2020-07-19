@@ -28,7 +28,7 @@
                         lg="6"
                     >
                       <v-hover v-slot:default="{ hover }">
-                        <v-card hover @click="$emit('VIEW_GENERATION', gen)" dark :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }">
+                        <v-card class="generation__card" hover @click="$emit('VIEW_GENERATION', gen)" :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }">
                           <v-card-text class="d-flex flex-column align-center">
                             <v-img
                               :alt="gen.name"
@@ -37,7 +37,7 @@
                               transition="scale-transition"
                               width="120"
                             />
-                            <span class="text-subtitle-2 text-uppercase">{{ gen.name }}</span>
+                            <span class="generation__title text-subtitle-2 text-uppercase">{{ gen.name }}</span>
                           </v-card-text>
                         </v-card>
                       </v-hover>
