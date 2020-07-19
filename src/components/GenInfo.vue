@@ -27,7 +27,20 @@
                         md="6"
                         lg="6"
                     >
-                        <GenCard :data="gen"/>
+                      <v-hover v-slot:default="{ hover }">
+                        <v-card hover @click="$emit('VIEW_GENERATION', gen)" dark :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }">
+                          <v-card-text class="d-flex flex-column align-center">
+                            <v-img
+                              :alt="gen.name"
+                              contain
+                              :src="gen.imageUrl"
+                              transition="scale-transition"
+                              width="120"
+                            />
+                            <span class="text-subtitle-2 text-uppercase">{{ gen.name }}</span>
+                          </v-card-text>
+                        </v-card>
+                      </v-hover>
                     </v-col>
                 </v-row>
             </div>
@@ -38,23 +51,22 @@
 </template>
 
 <script>
-import GenCard from "@/components/GenCard.vue";
+// import GenCard from "@/components/GenCard.vue";
 
 export default {
-name: "PokeInfo",
-data: () => ({
-    dialog: false,
-    pokeGen: {},
-}),
-methods: {
-    listGenerations(data) {
-        this.dialog = true;
-        this.pokeGen = data;
-        console.log(data);
-    }
-},
-components: {
-    GenCard
-}
+  name: "PokeInfo",
+  data: () => ({
+      dialog: false,
+      pokeGen: {},
+  }),
+  methods: {
+      listGenerations(data) {
+          this.dialog = true;
+          this.pokeGen = data;
+      }
+  },
+  components: {
+      // GenCard
+  }
 };
 </script>

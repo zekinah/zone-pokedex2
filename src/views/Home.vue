@@ -40,7 +40,7 @@
       </v-col>
     </v-row>
      <PokeInfo ref="pokemonInfo" />
-     <GenInfo ref="generationInfo" />
+     <GenInfo ref="generationInfo" @VIEW_GENERATION="viewGeneration"/>
   </div>
 </template>
 
@@ -67,7 +67,7 @@ export default {
   methods: {
     /** Get all Generation */
     async getPokemonList() {
-      let limit = 20;
+      let limit = 600;
       this.initialLoading = true;
       this.pokemons = await api.getAllPokemonByLimit(limit);
       this.initialLoading = false;
@@ -77,10 +77,19 @@ export default {
       const data  = await api.getByPokemon(id);
       this.$refs.pokemonInfo.viewPokemon(data);
     },
+    /** Get All Generation */
     async getGenerations() {
       const data  = await api.getAllGeneration();
       this.$refs.generationInfo.listGenerations(data);
     },
+    /** View Generation and View it */
+    async viewGeneration(gendata) {
+      await api.getAllByGeneration(gendata.id);
+      const data  = await api.getAllByGeneration(gendata.id);
+      this.pokemons = {};
+      this.pokemons = data;
+      this.dialog = false;
+    }
   },
   computed: {
     filteredPokemons() {

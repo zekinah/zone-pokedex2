@@ -18,18 +18,29 @@ export default {
     );
     const generation  = res.data.results.map(subdata => {
       const id = subdata.url.split("/")[subdata.url.split("/").length - 2];
+      const img = "../assets/images/group-gen"+id+".png";
       return {
         id,
         ...subdata,
+        imageUrl: img
       };
     });
     return generation;
   },
   async getAllByGeneration(id) {
-    const { data } = await http.get(
-      "https://pokeapi.co/api/v2/generation"+id
+    const res = await http.get(
+      "https://pokeapi.co/api/v2/generation/"+id
     );
-    return data;
+    const generation  = res.data.pokemon_species.map(subdata => {
+      const id = subdata.url.split("/")[subdata.url.split("/").length - 2];
+      img = (id > 721 ? imageUrldefault : imageUrlofficial);
+      return {
+        id,
+        ...subdata,
+        imageUrl: `${img}${id}.png`
+      };
+    });
+    return generation;
   },
   async getAllPokemon() {
     const { data } = await http.get(
