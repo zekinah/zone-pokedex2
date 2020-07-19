@@ -135,8 +135,16 @@ div#app {
     z-index: 1;
     margin: auto;
 }
+.generation__card {
+    position: relative;
+    background: url("/img/pokeball-vector-gray-30.8bdc9661.png") no-repeat;
+    background-position: 50%;
+    background-size: 200px;
+}
 .generation__card:hover {
-    background: #da5b60;
+    background: url("/img/pokeball-vector-gray-30.8bdc9661.png") no-repeat, #da5b60;
+    background-position: 50%;
+    background-size: 200px;
     transition: background-color .2s ease, color .2s ease;
 }
 .generation__card:hover .generation__title {
