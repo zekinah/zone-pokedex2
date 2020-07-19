@@ -2,6 +2,7 @@
   <v-dialog
     max-width="400"
     v-model="dialog"
+    content-class="poke__dialog"
     fullscreen
     hide-overlay
     transition="dialog-bottom-transition"

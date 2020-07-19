@@ -51,6 +51,9 @@ div#app {
 }
 .poke__card {
     position: relative;
+    background: url('../images/pokeball-vector-gray-30.png') no-repeat;
+    background-position: 89% -17px;
+    background-size: 90px;
 }
 .poke__card-id {
     font-size: 15px;
@@ -65,10 +68,6 @@ div#app {
     width: 100%;
     right: 20px;
     text-align: right;
-}
-.v-dialog {
-    border-top-left-radius: 35px!important;
-    border-top-right-radius: 35px!important;
 }
 .v-card__text.pokemon__container {
     background: url('../images/bg-transparent-pokeball-vector-white.png') no-repeat;
@@ -112,7 +111,11 @@ div#app {
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
 }
-
+.poke__dialog,
+.gen__dialog {
+    border-top-left-radius: 35px!important;
+    border-top-right-radius: 35px!important;
+}
 .gen__dialog {
     height: 85%;
     bottom: 0;

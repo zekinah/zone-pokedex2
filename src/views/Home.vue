@@ -1,6 +1,6 @@
 <template>
   <div class="homepage">
-    <Topwrapper :head="title" :sub="subtitle" @GET_GENERATION="getGenerations"/>
+    <Topwrapper :head="title" :sub="subtitle" @GET_GENERATION="getGenerations" @RELOAD="getPokemonList" @VIEW_ABOUT="viewAbout"/>
     <v-col cols="12" sm="6">
         <v-text-field
             outlined
@@ -41,6 +41,7 @@
     </v-row>
      <PokeInfo ref="pokemonInfo" />
      <GenInfo ref="generationInfo" @VIEW_GENERATION="viewGeneration"/>
+     <PokeAbout ref="pokedexAbout" />
   </div>
 </template>
 
@@ -50,6 +51,7 @@ import Topwrapper from "@/components/Topwrapper.vue";
 import PokeCard from "@/components/PokeCard.vue";
 import PokeInfo from "@/components/PokeInfo.vue";
 import GenInfo from "@/components/GenInfo.vue";
+import PokeAbout from "@/components/PokeAbout.vue";
 
 export default {
   name: "Home",
@@ -84,11 +86,15 @@ export default {
     },
     /** View Generation and View it */
     async viewGeneration(gendata) {
+      this.initialLoading = true;
       await api.getAllByGeneration(gendata.id);
       const data  = await api.getAllByGeneration(gendata.id);
       this.pokemons = {};
       this.pokemons = data;
-      this.dialog = false;
+      this.initialLoading = false;
+    },
+    viewAbout() {
+      this.$refs.pokedexAbout.about();
     }
   },
   computed: {
@@ -102,7 +108,8 @@ export default {
     Topwrapper,
     PokeCard,
     PokeInfo,
-    GenInfo
+    GenInfo,
+    PokeAbout
   }
 };
 </script>
