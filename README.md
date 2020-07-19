@@ -3,7 +3,7 @@
   <img src="https://raw.githubusercontent.com/zekinah/zone-pokedex2/master/public/img/zone-pokedex2.png" width="100" alt="site-logo"/>
 </div>
 <h1 align="center">
-  zone-pokedex2.netlify.com
+  zonepokedex2.netlify.com
 </h1>
 <p align="center">
   <a href="https://app.netlify.com/sites/zone-pokedex2/deploys" target="_blank">

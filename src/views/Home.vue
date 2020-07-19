@@ -106,6 +106,9 @@ export default {
       });
     }
   },
+  mounted() {
+    this.$ga.page("/home");
+  },
   components: {
     Topwrapper,
     PokeCard,
