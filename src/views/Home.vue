@@ -57,7 +57,7 @@ export default {
   name: "Home",
   data: () => ({
     title: "Pokédex",
-    subtitle: "Search for Pokémon by name or using National Pokédex number",
+    subtitle: "Search for Pokémon by name",
     search: "",
     pokemons: [],
     initialLoading: true,
@@ -83,7 +83,6 @@ export default {
     async getGenerations() {
       const data  = await api.getAllGeneration();
       this.$refs.generationInfo.listGenerations(data);
-      console.log(data);
     },
     /** View Generation and View it */
     async viewGeneration(gendata) {
@@ -102,7 +101,7 @@ export default {
   computed: {
     filteredPokemons() {
       return this.pokemons.filter(data => {
-        return data.name.toLowerCase().includes(this.search.toLowerCase());
+          return data.name.toLowerCase().includes(this.search.toLowerCase());
       });
     }
   },
