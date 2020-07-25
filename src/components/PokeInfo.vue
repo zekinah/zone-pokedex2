@@ -100,7 +100,8 @@ export default {
   methods: {
         viewPokemon(data) {
             var imageUrldefault = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-            var imageUrlofficial = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/";
+            // var imageUrlofficial = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"; [old url]
+            var imageUrlofficial = "https://raw.githubusercontent.com/zekinah/zone-pokedex2/master/src/assets/images/pokemon/";
             var img = (data.id > 721 ? imageUrldefault : imageUrlofficial);
             this.pokeImage = img + data.id + '.png';
             this.info = {
