@@ -43,6 +43,7 @@ npm run lint
 * [VueJS](https://vuejs.org/)
 * [Vuetify](https://vuetifyjs.com/)
 * [Poké-API](https://pokeapi.co/)
+* [Poké-API Sprites](https://github.com/PokeAPI/sprites)
 
 ## 😇 Acknowledgments
 * Hat tip for the third party libraries that are used into this site.

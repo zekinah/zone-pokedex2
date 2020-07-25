@@ -9,8 +9,9 @@ const http = axios.create({
 
 var img = "";
 var imageUrldefault = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-var imageUrlofficial = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/";
-var imageUrlGeneration = "https://raw.githubusercontent.com/zekinah/zone-pokedex2/master/src/assets/images/group-gen";
+// var imageUrlofficial = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"; [old url]
+var imageUrlofficial = "https://raw.githubusercontent.com/zekinah/zone-pokedex2/master/src/assets/images/pokemon";
+var imageUrlGeneration = "https://raw.githubusercontent.com/zekinah/zone-pokedex2/master/src/assets/images/generation/group-gen";
 
 export default {
   async getAllGeneration() {
@@ -26,7 +27,6 @@ export default {
         imageUrl: img
       };
     });
-    console.log(generation);
     return generation;
   },
   async getAllByGeneration(id) {
