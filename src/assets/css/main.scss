@@ -88,9 +88,6 @@ div#app {
     opacity: 0.2;
     text-transform: uppercase;
     position: absolute;
-    text-align: center;
-    display: block;
-    margin: auto;
     left: -49px;
     top: -10px;
 }
@@ -113,8 +110,8 @@ div#app {
 }
 .poke__dialog,
 .gen__dialog {
-    border-top-left-radius: 35px!important;
-    border-top-right-radius: 35px!important;
+    border-top-left-radius: 30px !important;
+    border-top-right-radius: 30px !important;
 }
 .gen__dialog {
     height: 85%;
