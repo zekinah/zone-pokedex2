@@ -55,7 +55,7 @@ export default {
       pokeapi: "https://pokeapi.co/",
       pokemon: "https://www.pokemon.com/us/",
       github: "https://github.com/zekinah/",
-      stargazers: "https://github.com/zekinah/pandemiccovid-19/stargazers",
+      stargazers: "https://github.com/zekinah/zone-pokedex2/stargazers",
       website: "https://zekinahlecaros.com/",
   }),
   methods: {
