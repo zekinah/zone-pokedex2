@@ -56,6 +56,4 @@ Feel free to fork this repo. If you do, please add attribution or just give me p
 https://github.com/zekinah/zone-pokedex2
 
 ## 👨‍💻 Author
-* **Zekinah Lecaros** - *Initial work* - [Zekinah Lecaros](https://zekinahlecaros.com/)
-
-<a href="https://www.buymeacoffee.com/zekinah" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+* [Zekinah Lecaros](https://zekinahlecaros.com/) - *Initial work*
